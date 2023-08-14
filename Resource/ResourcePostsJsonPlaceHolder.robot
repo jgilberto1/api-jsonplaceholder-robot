@@ -60,6 +60,11 @@ Quando Alterar o post "${ID_POST}" no jsonplaceholder
     Log    ${RESPOSTA.text}
     Set Test Variable    ${RESPOSTA}
 
+Quando Deletar o post "${ID_POST}" no jsonplaceholder
+    ${RESPOSTA}    Delete Request    jsonplaceholder    posts/${ID_POST}
+    Log    ${RESPOSTA.text}
+    Set Test Variable    ${RESPOSTA}
+
 # CONFERÊNCIAS
 
 Então o Status Code deverá ser
