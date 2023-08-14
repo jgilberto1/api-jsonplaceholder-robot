@@ -14,3 +14,9 @@ Buscar apenas um post pelo id (GET de um post específico)
     Então o Status Code deverá ser  200
     E a Reason  OK
     E Conferir o retorno de todos os dados corretos do post 2
+
+Cadastrar um novo post (POST de uma nova postagem)
+    Quando Cadastrar um novo post no jsonplaceholder
+    Então o Status Code deverá ser  201
+    E a Reason  Created
+    E realizar a conferência dos dados cadastrados do novo post
