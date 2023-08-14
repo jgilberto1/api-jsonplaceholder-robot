@@ -11,6 +11,10 @@ ${USER_ID_1}    1
 &{POST_1}       userId=1
 ...             id=2
 ...             title=qui est esse
+&{NEW_POST}     userId=1
+...             id=101
+...             title=Teste Post Api title
+...             body=Teste Post Api body
 
 
 *** Keywords ***
@@ -30,6 +34,14 @@ Quando requisitar o post ${ID_POST}
     Log    ${RESPOSTA.text}
     Set Test Variable    ${RESPOSTA}
 
+Quando Cadastrar um novo post no jsonplaceholder
+    ${RESPOSTA}    Post Request
+    ...    jsonplaceholder
+    ...    posts
+    ...    data={"userId":${NEW_POST.userId},"id":${NEW_POST.id}, "title":${NEW_POST.title},"body":${NEW_POST.body}}
+    Log To Console    ${RESPOSTA.text}
+    Set Test Variable    ${RESPOSTA}
+
 # CONFERÊNCIAS
 
 Então o Status Code deverá ser
@@ -46,3 +58,7 @@ E Conferir o retorno de todos os dados corretos do post ${ID_POST}
     Dictionary Should Contain Item    ${RESPOSTA.json()}    userId    ${USER_ID}
     Dictionary Should Contain Item    ${RESPOSTA.json()}    id    ${ID}
     Dictionary Should Contain Item    ${RESPOSTA.json()}    title    ${POST_1.title}
+
+E realizar a conferência dos dados cadastrados do novo post
+    ${ID}    Convert To Integer    ${NEW_POST.id}
+    Dictionary Should Contain Item    ${RESPOSTA.json()}    id    ${ID}
