@@ -29,3 +29,8 @@ Alterar um post (PUT Alterando uma postagem existente)
     Então o Status Code deverá ser    200
     E a Reason    OK
     Conferir se retorna todos os dados alterados do post "1"
+
+Deletar um post (DEL deletando uma postagem existente)
+    Quando Deletar o post "1" no jsonplaceholder
+    Então o Status Code deverá ser    200
+    E a Reason    OK
