@@ -30,7 +30,7 @@ robot -d Results .\Features\
 Com o prompt de comando acesse a pasta do projeto e execute o comando abaixo para rodar um cenário com a tag específica
 
 Ex.:
-robot -d Results -t "Boscar a listagem de todos os posts (GET em todos os posts)" Features/PostsJsonPlaceHolder.robot
+robot -d Results -t "Buscar a listagem de todos os posts (GET em todos os posts)" Features/PostsJsonPlaceHolder.robot
 
 ## EVIDÊNCIAS
 Os arquivos com as evidências ficam localizados na pasta Results do projeto, esta pasta só é criada depois da primeira execução. Lá se encontram os Logs e o report html com os status da execução.
