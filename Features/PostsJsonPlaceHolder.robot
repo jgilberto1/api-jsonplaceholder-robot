@@ -7,7 +7,7 @@ Suite Setup         Conectar a API
 
 
 *** Test Cases ***
-Boscar a listagem de todos os posts (GET em todos os posts)
+Buscar a listagem de todos os posts (GET em todos os posts)
     Quando requisitar todos os posts do jsonplaceholder
     Então o Status Code deverá ser    200
     E a Reason    OK
